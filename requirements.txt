@@ -1,5 +1,4 @@
 gitpython
-setuptools
 six
 requests
 python-dateutil

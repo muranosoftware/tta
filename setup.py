@@ -10,22 +10,21 @@ def _read(fname):
 
 
 def load_requirements(file_name):
-    requirements = []
+    requirements_list = []
     for l in _read(file_name).split('\n'):
         if l and not l.startswith('#'):
             if l.startswith('-r'):
-                requirements.extend(load_requirements(l[3:]))
+                requirements_list.extend(load_requirements(l[3:]))
             else:
-                requirements.append(l)
-    return requirements
+                requirements_list.append(l)
+    return requirements_list
 
 
 requirements = load_requirements('requirements.txt')
 
-
 setuptools.setup(
     name="tta",
-    version="0.1.5",
+    version="0.1.6",
     url="https://github.com/erm0l0v/tta",
 
     author="Kirill Ermolov",
@@ -43,6 +42,8 @@ setuptools.setup(
             'tta = tta.__main__:main',
         ]
     },
+
+    keywords='Time Tracker, Autocomplete, Muranosoft',
 
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
