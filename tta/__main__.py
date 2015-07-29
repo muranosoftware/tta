@@ -56,7 +56,8 @@ parser.add_argument('-c', '--category',
                     default=2)
 
 
-def main(options):
+def main():
+    options = parser.parse_args()
     tt = TTIntegration(options.user, options.password, category=options.category)
     month_work = GitMonthWork(options.email, options.directory)
     worked_days = get_worked_days()
@@ -66,5 +67,4 @@ def main(options):
         tt.post_message(current_date, is_working, message)
 
 if __name__ == '__main__':
-    args = parser.parse_args()
-    main(args)
+    main()
