@@ -1,3 +1,4 @@
+wheel==0.24.0
 GitPython==1.0.1
 six
 requests

@@ -28,7 +28,7 @@ requirements = load_requirements('requirements.txt')
 
 setup(
     name="tta",
-    version="0.1.7",
+    version="0.1.8",
     url="https://github.com/erm0l0v/tta",
 
     author="Kirill Ermolov",
@@ -39,7 +39,11 @@ setup(
 
     packages=['tta'],
 
+    package_dir={'tta':
+                 'tta'},
+    include_package_data=True,
     install_requires=requirements,
+    zip_safe=True,
 
     entry_points={
         'console_scripts': [
