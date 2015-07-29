@@ -25,7 +25,7 @@ requirements = load_requirements('requirements.txt')
 
 setuptools.setup(
     name="tta",
-    version="0.1.0",
+    version="0.1.1",
     url="https://github.com/erm0l0v/tta",
 
     author="Kirill Ermolov",
@@ -34,7 +34,7 @@ setuptools.setup(
     description="Time Tracker Autocompleter for Muranosoft",
     long_description=open('README.rst').read(),
 
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude=['*.tests', 'tests']),
 
     install_requires=requirements,
 
