@@ -11,22 +11,30 @@ tta
 
 Time Tracker Autocompleter for Muranosoft
 
-Usage
------
+This tool automatically fill out Time Tracker with messages from your git log.
 
 Installation
 ------------
 
-Requirements
-^^^^^^^^^^^^
+Install Python: `OSX <http://docs.python-guide.org/en/latest/starting/install/osx/>`_. `Windows <http://docs.python-guide.org/en/latest/starting/install/win/>`_. `Linux <http://docs.python-guide.org/en/latest/starting/install/linux/>`_.
 
-Compatibility
--------------
+Install tta, run console command:
 
-Licence
--------
+.. code::
+    
+    pip install tta
 
-Authors
--------
+Usage
+-----
+
+Type this command in console (in folder with your git repo):
+
+.. code::
+
+    tta -u uase -p qwerty -e gmail@gmail.com
+
+* uase - Your usernme in Time Tracker
+* password - Your password in Time Tracker
+* gmail@gmail.com - Your email in git config
 
 `tta` was written by `Kirill Ermolov <erm0l0v@ya.ru>`_.
