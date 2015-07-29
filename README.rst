@@ -5,10 +5,6 @@ tta
     :target: https://pypi.python.org/pypi/tta
     :alt: Latest PyPI version
 
-.. image:: https://travis-ci.org/erm0l0v/tta.png
-   :target: https://travis-ci.org/erm0l0v/tta
-   :alt: Latest Travis CI build status
-
 Time Tracker Autocompleter for Muranosoft
 
 This tool automatically fill out Time Tracker with messages from your git log.
