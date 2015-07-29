@@ -1,9 +1,11 @@
+#!/usr/bin/env python
+
 from __future__ import unicode_literals
 import argparse
 import operator
-from tt_integration import TTIntegration
-from month_work import GitMonthWork
-from worked_days import get_worked_days
+from .tt_integration import TTIntegration
+from .month_work import GitMonthWork
+from .worked_days import get_worked_days
 
 
 categories = (

@@ -25,7 +25,7 @@ requirements = load_requirements('requirements.txt')
 
 setuptools.setup(
     name="tta",
-    version="0.1.1",
+    version="0.1.2",
     url="https://github.com/erm0l0v/tta",
 
     author="Kirill Ermolov",
@@ -37,6 +37,8 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=['*.tests', 'tests']),
 
     install_requires=requirements,
+
+    scripts=['tta/tta.py'],
 
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
