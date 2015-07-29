@@ -1,5 +1,5 @@
-gitpython
+GitPython==1.0.1
 six
 requests
 python-dateutil
-cached-property
+cached-property==1.2.0

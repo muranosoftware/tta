@@ -1,5 +1,9 @@
-import setuptools
 from os import path
+
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 
 def _read(fname):
@@ -22,9 +26,9 @@ def load_requirements(file_name):
 
 requirements = load_requirements('requirements.txt')
 
-setuptools.setup(
+setup(
     name="tta",
-    version="0.1.6",
+    version="0.1.7",
     url="https://github.com/erm0l0v/tta",
 
     author="Kirill Ermolov",
@@ -33,7 +37,7 @@ setuptools.setup(
     description="Time Tracker Autocompleter for Muranosoft",
     long_description=open('README.rst').read(),
 
-    packages=setuptools.find_packages(exclude=['*.tests', 'tests']),
+    packages=['tta'],
 
     install_requires=requirements,
 
