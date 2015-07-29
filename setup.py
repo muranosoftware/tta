@@ -1,4 +1,27 @@
 import setuptools
+from os import path
+
+
+def _read(fname):
+    try:
+        return open(path.join(path.dirname(__file__), fname)).read()
+    except IOError:
+        return ''
+
+
+def load_requirements(file_name):
+    requirements = []
+    for l in _read(file_name).split('\n'):
+        if l and not l.startswith('#'):
+            if l.startswith('-r'):
+                requirements.extend(load_requirements(l[3:]))
+            else:
+                requirements.append(l)
+    return requirements
+
+
+requirements = load_requirements('requirements.txt')
+
 
 setuptools.setup(
     name="tta",
@@ -13,7 +36,7 @@ setuptools.setup(
 
     packages=setuptools.find_packages(),
 
-    install_requires=[],
+    install_requires=requirements,
 
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -23,4 +46,6 @@ setuptools.setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
     ],
+
+    test_suite='tests',
 )

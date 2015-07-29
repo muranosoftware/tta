@@ -1,0 +1,6 @@
+gitpython
+setuptools
+six
+requests
+python-dateutil
+cached-property
