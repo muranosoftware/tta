@@ -1,4 +1,5 @@
-from os import path
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 try:
     from setuptools import setup
@@ -6,29 +7,17 @@ except ImportError:
     from distutils.core import setup
 
 
-def _read(fname):
-    try:
-        return open(path.join(path.dirname(__file__), fname)).read()
-    except IOError:
-        return ''
-
-
-def load_requirements(file_name):
-    requirements_list = []
-    for l in _read(file_name).split('\n'):
-        if l and not l.startswith('#'):
-            if l.startswith('-r'):
-                requirements_list.extend(load_requirements(l[3:]))
-            else:
-                requirements_list.append(l)
-    return requirements_list
-
-
-requirements = load_requirements('requirements.txt')
+requirements = [
+    'GitPython',
+    'six',
+    'requests',
+    'python-dateutil',
+    'cached-property'
+]
 
 setup(
     name="tta",
-    version="0.1.9",
+    version="0.1.10",
     url="https://github.com/erm0l0v/tta",
 
     author="Kirill Ermolov",
