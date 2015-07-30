@@ -27,9 +27,9 @@ Type this command in console (in folder with your git repo):
 
 .. code::
 
-    tta -u uase -p qwerty -e gmail@gmail.com
+    tta -u user -p qwerty -e gmail@gmail.com
 
-* uase - Your usernme in Time Tracker
+* user - Your username in Time Tracker
 * password - Your password in Time Tracker
 * gmail@gmail.com - Your email in git config
 
