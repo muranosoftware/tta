@@ -30,7 +30,7 @@ Type this command in console (in folder with your git repo):
     tta -u user -p qwerty -e gmail@gmail.com
 
 * user - Your username in Time Tracker
-* password - Your password in Time Tracker
+* qwerty - Your password in Time Tracker
 * gmail@gmail.com - Your email in git config
 
 `tta` was written by `Kirill Ermolov <erm0l0v@ya.ru>`_.
