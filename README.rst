@@ -1,7 +1,7 @@
 tta
 ===
 
-.. image:: https://pypip.in/v/tta/badge.png
+.. image:: https://img.shields.io/pypi/v/tta.svg
     :target: https://pypi.python.org/pypi/tta
     :alt: Latest PyPI version
 
