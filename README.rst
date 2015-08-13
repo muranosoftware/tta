@@ -1,4 +1,5 @@
-# tta - Time Tracker Autocompleter for Muranosoft
+tta - Time Tracker Autocompleter for Muranosoft
+===============================================
 
 .. image:: https://img.shields.io/pypi/v/tta.svg
     :target: https://pypi.python.org/pypi/tta
@@ -8,7 +9,8 @@ Time Tracker Autocompleter for Muranosoft
 
 This tool automatically fill out Time Tracker with messages from your git log.
 
-## Installation:
+Installation:
+-------------
 
 Install Python: `OSX <http://docs.python-guide.org/en/latest/starting/install/osx/>`_. `Windows <http://docs.python-guide.org/en/latest/starting/install/win/>`_. `Linux <http://docs.python-guide.org/en/latest/starting/install/linux/>`_.
 
@@ -18,7 +20,8 @@ Install tta, run console command:
     
     pip install tta
 
-## Usage:
+Usage:
+------
 
 Type this command in console (in folder with your git repo):
 
@@ -30,15 +33,26 @@ Type this command in console (in folder with your git repo):
 * qwerty - Your password in Time Tracker
 * gmail@gmail.com - Your email in git config
 
-## Options:
+Options:
+--------
 
-* `-u` ( `--user` ) - Time Tracker username
-* `-p` ( `--password` ) - Time Tracker password
-* `-e` ( `--email` ) - Your email in git config
-* `-d` ( `--directory` ) - Path to git directory
-* `-c` ( `--category` ) - Time Tracker category, default: Development.
 
-### Categories:
++--------------+---------------+----------------------------------------------+
+| Short option | Option        | Description                                  |
++==============+===============+==============================================+
+| *-u*         | *--user*      | Time Tracker username                        |
++--------------+---------------+----------------------------------------------+
+| *-p*         | *--password*  | Time Tracker password                        |
++--------------+---------------+----------------------------------------------+
+| *-e*         | *--email*     | Your email in git config                     |
++--------------+---------------+----------------------------------------------+
+| *-d*         | *--directory* | Path to git directory                        |
++--------------+---------------+----------------------------------------------+
+| *-c*         | *--category*  | Time Tracker category, default: Development. |
++--------------+---------------+----------------------------------------------+
+
+Categories:
+-----------
 
 * 17 - Client Support
 * 12 - Code Review
