@@ -17,7 +17,7 @@ requirements = [
 
 setup(
     name="tta",
-    version="0.2.0",
+    version="0.2.1",
     url="https://github.com/erm0l0v/tta",
 
     author="Kirill Ermolov",
