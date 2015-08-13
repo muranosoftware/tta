@@ -7,7 +7,9 @@ from dateutil.rrule import rrule, DAILY, MO, TU, WE, TH, FR
 import requests
 
 
-calend_url = 'http://basicdata.ru/api/json/calend/'
+calened_url = 'http://basicdata.ru/api/json/calend/'
+
+date_format = "%Y-%m-%d"
 
 
 def mark_holidays(cal_dates, current_date):
@@ -19,12 +21,20 @@ def mark_holidays(cal_dates, current_date):
     return current_date, not is_working
 
 
-def get_worked_days():
-    response = requests.get(calend_url)
+def get_worked_days(start_date=None, end_date=None):
+    if start_date is None:
+        start_date = date.today()+relativedelta(day=1)
+    else:
+        start_date = datetime.strptime(start_date, date_format).date()
+    if end_date is None:
+        end_date = date.today()+relativedelta(months=+1, day=1) + relativedelta(days=-1)
+    else:
+        end_date = datetime.strptime(end_date, date_format).date()
+    response = requests.get(calened_url)
     cal_dates = response.json()
     dates = rrule(DAILY,
-                  dtstart=date.today()+relativedelta(day=1),
-                  until=date.today()+relativedelta(months=+1, day=1) + relativedelta(days=-1),
+                  dtstart=start_date,
+                  until=end_date,
                   byweekday=(MO, TU, WE, TH, FR))
     usual_worked_days = list(map(partial(mark_holidays, cal_dates), dates))
     today = date.today()

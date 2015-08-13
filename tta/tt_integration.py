@@ -32,10 +32,12 @@ class TTIntegration(object):
     post_url = 'https://tt.muranosoft.com/TimeEntry.aspx'
     holiday_id = 27
 
-    def __init__(self, username, password, category=2):
+    def __init__(self, username, password, category=2, start_work_day=10, end_work_day=18):
         self.username = username
         self.password = password
         self.category = category
+        self.start_work_day = start_work_day
+        self.end_work_day = end_work_day
 
     @cached_property
     def html(self):
@@ -50,9 +52,9 @@ class TTIntegration(object):
                 'ctl00$_content$ctl00$_content$panelEditFormPanel|ctl00$_content$lbtnAddEntry',
             'ctl00$_content$ddlProjects': get_selected_value(self.html, 'ctl00$_content$ddlProjects'),
             'ctl00$_content$ddlCategories': self.category,
-            'ctl00$_content$ucStartTime$ddlHour': 10,
+            'ctl00$_content$ucStartTime$ddlHour': self.start_work_day,
             'ctl00$_content$ucStartTime$ddlMinutes': 0,
-            'ctl00$_content$ucEndTime$ddlHour': 18,
+            'ctl00$_content$ucEndTime$ddlHour': self.end_work_day,
             'ctl00$_content$ucEndTime$ddlMinutes': 0,
             'ctl00$_content$ddlUsers': get_selected_value(self.html, 'ctl00$_content$ddlUsers'),
             'RadAJAXControlID': 'ctl00__content_RadAjaxManager1',
@@ -73,9 +75,9 @@ class TTIntegration(object):
             '__EVENTTARGET': 'ctl00$_content$lbtnAddEntry',
             'ctl00$_content$ddlProjects': get_selected_value(html, 'ctl00$_content$ddlProjects'),
             'ctl00$_content$ddlCategories': self.category,
-            'ctl00$_content$ucStartTime$ddlHour': 10,
+            'ctl00$_content$ucStartTime$ddlHour': self.start_work_day,
             'ctl00$_content$ucStartTime$ddlMinutes': 0,
-            'ctl00$_content$ucEndTime$ddlHour': 18,
+            'ctl00$_content$ucEndTime$ddlHour': self.end_work_day,
             'ctl00$_content$ucEndTime$ddlMinutes': 0,
             'ctl00$_content$ddlUsers': get_selected_value(html, 'ctl00$_content$ddlUsers'),
             'RadAJAXControlID': 'ctl00__content_RadAjaxManager1',

@@ -54,13 +54,33 @@ parser.add_argument('-c', '--category',
                     choices=list(map(operator.itemgetter(0), categories)),
                     type=int,
                     default=2)
+parser.add_argument('--start_date',
+                    help='Start date of period, Default: first day of current month',
+                    type=str,
+                    default=None)
+parser.add_argument('--end_date',
+                    help='End date of period, Default: last day of current month',
+                    type=str,
+                    default=None)
+parser.add_argument('--start_work_day',
+                    help='Hour of start working day. Default: 10',
+                    type=int,
+                    default=10)
+parser.add_argument('--end_work_day',
+                    help='Hour of end working day. Default: 18',
+                    type=int,
+                    default=18)
 
 
 def main():
     options = parser.parse_args()
-    tt = TTIntegration(options.user, options.password, category=options.category)
+    tt = TTIntegration(options.user,
+                       options.password,
+                       options.category,
+                       options.start_work_day,
+                       options.end_work_day)
     month_work = GitMonthWork(options.email, options.directory)
-    worked_days = get_worked_days()
+    worked_days = get_worked_days(options.start_date, options.end_date)
     commits = month_work.get_last_n_commits(len(worked_days))
     data = zip(worked_days, commits)
     for (current_date, is_working), message in data:
