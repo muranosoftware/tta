@@ -36,11 +36,11 @@ Type this command in console (in folder with your git repo):
 Options:
 --------
 
-* `-u`( `--user`)       - Time Tracker username
-* `-p`(`--password`)    - Time Tracker password
-* `-e`(`--email`)       - Your email in git config
-* `-d`(`--directory`)   - Path to git directory
-* `-c`(`--category`)    - Time Tracker category, default: Development.
+* `-u` ( `--user` )         - Time Tracker username
+* `-p` ( `--password` )     - Time Tracker password
+* `-e` ( `--email` )        - Your email in git config
+* `-d` ( `--directory` )    - Path to git directory
+* `-c` ( `--category` )     - Time Tracker category, default: Development.
 
 
 `tta` was written by `Kirill Ermolov <erm0l0v@ya.ru>`_.
