@@ -1,37 +1,38 @@
-tta - Time Tracker Autocompleter for Muranosoft
-===============================================
+tta - Time Tracker Автозаполнялка для Muranosoft
+================================================
 
 .. image:: https://img.shields.io/pypi/v/tta.svg
     :target: https://pypi.python.org/pypi/tta
     :alt: Latest PyPI version
 
-Time Tracker Autocompleter for Muranosoft
+Автозаполнялка Time Tracker-а для Murano Soft
 
-This tool automatically fill out Time Tracker with messages from your git log.
+Тулза использует *git* лог для получения уникальных описаний каждодневной работы.
+Тулза использует этот `API <http://basicdata.ru/api/calend/>`_ для определения рабочих и не рабочих дней.
 
-Installation:
--------------
+Установка:
+----------
 
-Install Python: `OSX <http://docs.python-guide.org/en/latest/starting/install/osx/>`_. `Windows <http://docs.python-guide.org/en/latest/starting/install/win/>`_. `Linux <http://docs.python-guide.org/en/latest/starting/install/linux/>`_.
+Тулза написана на *Python*, так что его нужно поставить: `OSX <http://docs.python-guide.org/en/latest/starting/install/osx/>`_, `Windows <http://docs.python-guide.org/en/latest/starting/install/win/>`_, `Linux <http://docs.python-guide.org/en/latest/starting/install/linux/>`_.
 
-Install **tta** (*run console command*):
+Саму тулзу можно поставить через пакетный менеджер, который идет вместе с *Python*.
 
 .. code::
     
     pip install tta
 
-Usage:
-------
+Использование:
+--------------
 
-Type this command in console (in folder with your git repo):
+Все что нужно сделать - запустить команду в папке с git репозиторием:
 
 .. code::
 
     tta -u user -p qwerty -e gmail@gmail.com
 
-* user - Your username in Time Tracker
-* qwerty - Your password in Time Tracker
-* gmail@gmail.com - Your email in git config
+* user - Имя пользователя в Time Tracker.
+* qwerty - Пароль от Time Tracker.
+* gmail@gmail.com - email который указан в git config вашего перозитория.
 
 Options:
 --------
@@ -40,28 +41,28 @@ Options:
 +---------------------------+----------------------------------------------+
 | Option                    | Description                                  |
 +======+====================+==============================================+
-| *-u* | *--user*           | Time Tracker username                        |
+| *-u* | *--user*           | логин от Time Tracker                        |
 +------+--------------------+----------------------------------------------+
-| *-p* | *--password*       | Time Tracker password                        |
+| *-p* | *--password*       | пароль от Time Tracker                       |
 +------+--------------------+----------------------------------------------+
-| *-e* | *--email*          | Your email in git config                     |
+| *-e* | *--email*          | email в git config                           |
 +------+--------------------+----------------------------------------------+
-| *-d* | *--directory*      | Path to git directory                        |
+| *-d* | *--directory*      | Полный путь до папки с репозиторием          |
 +------+--------------------+----------------------------------------------+
-|      | *--start_date*     | Start date of period (EX: 2015-8-27)         |
-|      |                    | *Default: first day of current month*        |
+|      | *--start_date*     | Начало периода (Пример: 2015-8-27)           |
+|      |                    | *По дефолту: первый день текущего месяца*    |
 +------+--------------------+----------------------------------------------+
-|      | *--end_date*       | End date of period (EX: 2015-8-29)           |
-|      |                    | *Default: last day of current month*         |
+|      | *--end_date*       | Окончание периода (Пример: 2015-8-29)        |
+|      |                    | *По деволту: последний день текущего месяца* |
 +------+--------------------+----------------------------------------------+
-|      | *--start_work_day* | Hour of start working day. Default: *10*     |
+|      | *--start_work_day* | Начало рабочего дня (часы). По дефолту: *10* |
 +------+--------------------+----------------------------------------------+
-|      | *--end_work_day*   | Hour of end working day. Default: *18*       |
+|      | *--end_work_day*   | Конец рабочего для (часы). По дефолту: *18*  |
 +------+--------------------+----------------------------------------------+
-| *-c* | *--category*       | Time Tracker category, default: Development. |
-|      |                    |                                              |
+| *-c* | *--category*       | Категория в Time Tracker                     |
+|      |                    | *По дефолту: 2 (Development)*.               |
 |      |                    +----------------------------------------------+
-|      |                    | **Categories:**                              |
+|      |                    | **Список категорий:**                        |
 |      |                    +----+-----------------------------------------+
 |      |                    | ID | Name                                    |
 |      |                    +----+-----------------------------------------+
