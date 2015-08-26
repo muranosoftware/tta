@@ -1,6 +1,10 @@
 tta - Time Tracker Автозаполнялка для Muranosoft
 ================================================
 
+.. image:: https://badges.gitter.im/Join%20Chat.svg
+   :alt: Join the chat at https://gitter.im/erm0l0v/tta
+   :target: https://gitter.im/erm0l0v/tta?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 .. image:: https://img.shields.io/pypi/v/tta.svg
     :target: https://pypi.python.org/pypi/tta
     :alt: Latest PyPI version
