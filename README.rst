@@ -9,6 +9,10 @@ tta - Time Tracker Автозаполнялка для Muranosoft
     :target: https://pypi.python.org/pypi/tta
     :alt: Latest PyPI version
 
+.. image:: https://requires.io/github/erm0l0v/tta/requirements.svg?branch=master
+     :target: https://requires.io/github/erm0l0v/tta/requirements/?branch=master
+     :alt: Requirements Status
+
 Автозаполнялка Time Tracker-а для Murano Soft
 
 Тулза использует *git* лог для получения уникальных описаний каждодневной работы.
