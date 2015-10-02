@@ -13,6 +13,10 @@ tta - Time Tracker Автозаполнялка для Muranosoft
      :target: https://requires.io/github/erm0l0v/tta/requirements/?branch=master
      :alt: Requirements Status
 
+.. image:: https://landscape.io/github/erm0l0v/tta/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/erm0l0v/tta/master
+   :alt: Code Health
+
 Автозаполнялка Time Tracker-а для Murano Soft
 
 Тулза использует *git* лог для получения уникальных описаний каждодневной работы.
