@@ -1,4 +1,4 @@
-tta - Time Tracker Автозаполнялка для Muranosoft
+TTA - Time Tracker Automation - Автозаполнялка Time Tracker для Muranosoft
 ================================================
 
 .. image:: https://badges.gitter.im/Join%20Chat.svg
