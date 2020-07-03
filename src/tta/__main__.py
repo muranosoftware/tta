@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 import argparse
 import operator
 from .tt_integration import TTIntegration
-from .month_work import GitMonthWork
 from .worked_days import get_worked_days
 
 
@@ -41,13 +40,10 @@ parser.add_argument('-p', '--password',
                     help='Time Tracker password',
                     type=str,
                     required=True)
-parser.add_argument('-e', '--email',
-                    help='Your email in git config',
+parser.add_argument('-m', '--message',
+                    help='Time Tracker message',
                     type=str,
                     required=True)
-parser.add_argument('-d', '--directory',
-                    help='Path to git directory[optional]',
-                    default=None)
 parser.add_argument('-c', '--category',
                     help=('Time Tracker category, default: Development. Options:\n' +
                           '\n'.join(map(lambda i: '[ {0}\t{1} ]'.format(i[0], i[1]), categories))),
@@ -79,12 +75,10 @@ def main():
                        options.category,
                        options.start_work_day,
                        options.end_work_day)
-    month_work = GitMonthWork(options.email, options.directory)
+    
     worked_days = get_worked_days(options.start_date, options.end_date)
-    commits = month_work.get_last_n_commits(len(worked_days))
-    data = zip(worked_days, commits)
-    for (current_date, is_working), message in data:
-        tt.post_message(current_date, is_working, message)
+    for current_date, is_working in worked_days:
+        tt.post_message(current_date, is_working, options.message)
 
 if __name__ == '__main__':
     main()

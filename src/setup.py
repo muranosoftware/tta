@@ -8,7 +8,6 @@ except ImportError:
 
 
 requirements = [
-    'GitPython',
     'six',
     'requests',
     'python-dateutil',
