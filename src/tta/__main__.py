@@ -40,8 +40,8 @@ parser.add_argument('-p', '--password',
                     help='Time Tracker password',
                     type=str,
                     required=True)
-parser.add_argument('-m', '--message',
-                    help='Time Tracker message',
+parser.add_argument('-d', '--description',
+                    help='Time Tracker description',
                     type=str,
                     required=True)
 parser.add_argument('-c', '--category',
@@ -78,7 +78,7 @@ def main():
     
     worked_days = get_worked_days(options.start_date, options.end_date)
     for current_date, is_working in worked_days:
-        tt.post_message(current_date, is_working, options.message)
+        tt.post_message(current_date, is_working, options.description)
 
 if __name__ == '__main__':
     main()
