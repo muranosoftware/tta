@@ -16,11 +16,21 @@ tta - Time Tracker Автозаполнялка для Muranosoft
 .. image:: https://landscape.io/github/erm0l0v/tta/master/landscape.svg?style=flat
    :target: https://landscape.io/github/erm0l0v/tta/master
    :alt: Code Health
+   
 
-Автозаполнялка Time Tracker-а для Murano Soft
+Автозаполнялка Time Tracker-а для Murano Soft. Тулза использует этот `API <http://basicdata.ru/api/calend/>`_ для определения рабочих и не рабочих дней.
 
-Тулза использует *git* лог для получения уникальных описаний каждодневной работы.
-Тулза использует этот `API <http://basicdata.ru/api/calend/>`_ для определения рабочих и не рабочих дней.
+Запуск:
+----------
+
+Тулза запаковывается в docker-образ и заливается на github. Пример запуска:
+
+.. code::
+
+    docker run --rm --tty -it --entrypoint tta docker.pkg.github.com/appulate/tta/tta:latest -u ivan.petrov -c 14 -p MySuperDomainPassword -m "Super Job"
+    
+Обратите внимание на параметры -c и -m. Они задают категорию и комментарий для tt. Более подробное описание ниже.
+
 
 Установка:
 ----------
@@ -36,15 +46,9 @@ tta - Time Tracker Автозаполнялка для Muranosoft
 Использование:
 --------------
 
-Все что нужно сделать - запустить команду в папке с git репозиторием:
-
 .. code::
 
-    tta -u user -p qwerty -e gmail@gmail.com
-
-* user - Имя пользователя в Time Tracker.
-* qwerty - Пароль от Time Tracker.
-* gmail@gmail.com - email который указан в git config вашего перозитория.
+    tta -u ivan.petrov -p my_domain_password -c 
 
 Options:
 --------
@@ -57,9 +61,7 @@ Options:
 +-------+--------------------+--------------------------------------------+
 | *-p*  | *--password*       | пароль от Time Tracker                     |
 +-------+--------------------+--------------------------------------------+
-| *-e*  | *--email*          | email в git config                         |
-+-------+--------------------+--------------------------------------------+
-| *-d*  | *--directory*      | Полный путь до папки с репозиторием        |
+| *-m*  | *--message*        | комментарий к записи в Time Tracker        |
 +-------+--------------------+--------------------------------------------+
 |       | *--start_date*     | Начало периода (Пример: 2015-8-27)         |
 |       |                    |                                            |
