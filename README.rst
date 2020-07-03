@@ -28,7 +28,7 @@ tta - Time Tracker Автозаполнялка для Muranosoft
 
 .. code::
 
-    docker run --rm --tty -it --entrypoint tta docker.pkg.github.com/appulate/tta/tta:latest -u ivan.petrov -c 14 -p MySuperDomainPassword -m "Super Job"
+    docker run --rm -it --entrypoint tta docker.pkg.github.com/appulate/tta/tta:latest -u ivan.petrov -c 14 -p MySuperDomainPassword -m "Super Job"
     
 Обратите внимание на параметры -c и -m. Они задают категорию и комментарий для tt. Более подробное описание ниже.
 
