@@ -1,4 +1,4 @@
-TTA - Time Tracker Automation
+TTA - Time Tracker Autocomplete tool
 ================================================
 
 .. image:: https://badges.gitter.im/Join%20Chat.svg
