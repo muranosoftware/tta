@@ -20,7 +20,7 @@ tta - Time Tracker Автозаполнялка для Muranosoft
 
 Автозаполнялка Time Tracker-а для Murano Soft. Тулза использует этот `API <http://basicdata.ru/api/calend/>`_ для определения рабочих и не рабочих дней.
 
-Запуск:
+Запуск в docker:
 ----------
 
 Тулза запаковывается в docker-образ и заливается на github. Пример запуска:
@@ -30,25 +30,6 @@ tta - Time Tracker Автозаполнялка для Muranosoft
     docker run --rm --tty -it --entrypoint tta docker.pkg.github.com/appulate/tta/tta:latest -u ivan.petrov -c 14 -p MySuperDomainPassword -m "Super Job"
     
 Обратите внимание на параметры -c и -m. Они задают категорию и комментарий для tt. Более подробное описание ниже.
-
-
-Установка:
-----------
-
-Тулза написана на *Python*, так что его нужно поставить: `OSX <http://docs.python-guide.org/en/latest/starting/install/osx/>`_, `Windows <http://docs.python-guide.org/en/latest/starting/install/win/>`_, `Linux <http://docs.python-guide.org/en/latest/starting/install/linux/>`_.
-
-Саму тулзу можно поставить через пакетный менеджер, который идет вместе с *Python*.
-
-.. code::
-    
-    pip install tta
-
-Использование:
---------------
-
-.. code::
-
-    tta -u ivan.petrov -p my_domain_password -c 
 
 Options:
 --------
