@@ -23,7 +23,7 @@ setup(
     author_email="erm0l0v@ya.ru",
 
     description="Time Tracker Autocompleter for Muranosoft",
-    long_description=open('README.rst').read(),
+    long_description=open('../README.rst').read(),
 
     packages=['tta'],
 
