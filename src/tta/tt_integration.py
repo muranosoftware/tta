@@ -85,16 +85,16 @@ class TTIntegration(object):
             '__VIEWSTATE': get_value(html, '__VIEWSTATE')
         }
 
-    def post_message(self, current_date, is_working, message):
+    def post_message(self, current_date, message):
         data = {
             'ctl00$_content$ddlMonths': current_date.month,
             'ctl00$_content$ddlYears': current_date.year,
             'ctl00$_content$ddlDays': current_date.strftime('%d.%m.%Y 0:00:00'),
             'ctl00$_content$tboxDescription': message,
         }
-        if not is_working:
-            data['ctl00$_content$tboxDescription'] = 'Holiday'
-            data['ctl00$_content$ddlCategories'] = self.holiday_id
+        # if not is_working:
+        #     data['ctl00$_content$tboxDescription'] = 'Holiday'
+        #     data['ctl00$_content$ddlCategories'] = self.holiday_id
         post_data = merge_two_dicts(self.context(current_date), data)
         result = requests.post(self.post_url, post_data, auth=HTTPBasicAuth(self.username, self.password))
         print('{0} - {1} : {2} - {3}'.format(

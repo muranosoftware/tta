@@ -77,8 +77,8 @@ def main():
                        options.end_work_day)
     
     worked_days = get_worked_days(options.start_date, options.end_date)
-    for current_date, is_working in worked_days:
-        tt.post_message(current_date, is_working, options.description)
+    for current_date in worked_days:
+        tt.post_message(current_date, options.description)
 
 if __name__ == '__main__':
     main()
